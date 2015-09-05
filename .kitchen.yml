@@ -1,0 +1,30 @@
+---
+driver:
+  name: vagrant
+  vagrantfile_erb: Vagrantfile.erb
+  forward_agent: true
+  customize:
+    cpus:   2
+    memory: 1024
+
+busser:
+  ruby_bindir: /opt/rbenv/versions/2.1.2/bin
+
+provisioner:
+  name: chef_zero
+  environments_path: environments
+  client_rb:
+    environment: test
+    diff_disable: true
+
+platforms:
+- name: ubuntu-14.04
+  driver:
+    box: invoca-vagrant-virtualbox-ubuntu-14.04
+    box_url: https://s3.amazonaws.com/ringrevenue-infrastructure/images/invoca-vagrant-virtualbox-ubuntu-14.04.box
+  driver_config:
+    require_chef_omnibus: false
+
+suites:
+  - name: default
+    run_list:
