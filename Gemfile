@@ -5,7 +5,6 @@ gem 'berkshelf',          '~> 3.3'
 gem 'chef',               '~> 11.18.12'
 gem 'chef-sugar',         '~> 3.1'
 gem 'chefspec',           '~> 4.0.2'
-gem 'revops-versioning',  git: 'git@github.com:invoca/revops-versioning.git'
 gem 'varia_model',        '= 0.4.1'
 
 group :development do
