@@ -19,7 +19,19 @@ describe 'openvas-cookbook::server' do
   end
 
 it 'adds openvas repo' do
-  expect(chef_run).to add_apt_repository('openvas')
+  expect(chef_run).to add_apt_repository('openvas').with(
+  :uri => 'ppa:mrazavi/openvas',
+  :distribution => 'trusty'
+  )
 end
+
+it 'install openvas package' do
+  expect(chef_run).to install_apt_package('openvas')
+end
+
+it 'install sqlite3 package' do
+  expect(chef_run).to install_apt_package('sqlite3')
+end
+
 
 end
