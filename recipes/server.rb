@@ -130,5 +130,39 @@ ruby_block "gen_rand_openvas_pass" do
 end
 
 
+# Add template for /etc/openvas/gsad_log.conf
+#template "/etc/openvas/gsad_log.conf" do
+#  source "gsad_log.conf.erb"
+#  owner "root"
+#  group "root"
+#  mode "0644"
+#  not_if "test -f /etc/openvas/gsad_log.conf"
+#  notifies :reload, "service[gsad-service]", :immediately
+#end
 
-#gsad --http-only --listen=127.0.0.1 -p 9392
+# Add template for /etc/openvas/openvasmd_log.conf
+template "/etc/openvas/openvasmd_log.conf" do
+  source "openvasmd_log.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :restart, "service[openvas-manager]", :immediately
+end
+
+# Add template for /etc/openvas/openvassd.conf
+template "/etc/openvas/openvassd.conf" do
+  source "openvassd.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :reload, "service[openvas-scanner]", :immediately
+end
+
+# Add template for /etc/openvas/openvassd.rules
+template "/etc/openvas/openvassd.rules" do
+  source "openvassd.rules.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :reload, "service[openvas-scanner]", :immediately
+end
