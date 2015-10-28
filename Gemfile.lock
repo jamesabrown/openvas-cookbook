@@ -245,6 +245,3 @@ DEPENDENCIES
   serverspec (~> 2.23)
   test-kitchen (~> 1.4)
   varia_model (= 0.4.1)
-
-BUNDLED WITH
-   1.10.6
