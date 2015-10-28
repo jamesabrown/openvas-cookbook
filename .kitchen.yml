@@ -25,5 +25,6 @@ platforms:
     require_chef_omnibus: false
 
 suites:
-  - name: default
+  - name: openvas
     run_list:
+      - recipe[openvas-cookbook::server]
