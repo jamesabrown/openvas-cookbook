@@ -1,6 +1,7 @@
 #
 # Installs Openvas
 #
+include_recipe 'openvas-cookbook::cron'
 
 apt_repository 'openvas' do
   uri 'ppa:mrazavi/openvas'

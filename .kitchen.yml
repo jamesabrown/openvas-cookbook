@@ -7,6 +7,10 @@ driver:
     cpus:   2
     memory: 1024
 
+  network:
+  - [ 'forwarded_port', { guest: 9392, host: 9392, auto_correct: true } ]
+  - [ 'forwarded_port', { guest: 443, host: 443, auto_correct: true } ]
+
 busser:
   ruby_bindir: /opt/rbenv/versions/2.1.2/bin
 
