@@ -22,5 +22,5 @@ end
 cron 'openvas-rebuild' do
   hour '9'
   minute '45'
-  command "sudo openvascmd --rebuild --progress"
+  command "sudo openvasmd --rebuild --progress"
 end

@@ -46,7 +46,7 @@ it 'create rebuild' do
   expect(chef_run).to create_cron('openvas-rebuild').with(
     minute: '45',
     hour:   '9',
-    command: "sudo openvascmd --rebuild --progress"
+    command: "sudo openvasmd --rebuild --progress"
   )
 end
 
