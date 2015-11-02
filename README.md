@@ -1,6 +1,6 @@
-# Skeleton Cookbook
+# OpenVas Cookbook
 
-Description goes here.
+Installs and configures OpenVas on Ubuntu 14.04
 
 # Testing
 
@@ -23,4 +23,4 @@ Description goes here.
 
 # Author
 
-Author:: Invoca Operations (<operations@invoca.com>)
+Author:: James Brown (<jbrown@thejbproject.com>)
