@@ -5,7 +5,7 @@ require_relative 'spec_helper'
 
 describe 'openvas-cookbook::server' do
   let(:chef_run) do
-    ChefSpec::Runner.new do |node|
+    ChefSpec::SoloRunner.new do |node|
       env = Chef::Environment.new
       env.name 'test'
 
